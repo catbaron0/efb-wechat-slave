@@ -11,39 +11,39 @@ EFB WeChat Slave Channel：EFB 微信从端 (EWS)
 .. figure:: https://i.imgur.com/dCZfh14.png
    :alt: This project proudly supports #SayNoToWeChat campaign.
 
+`README in other languages`_.
+
+.. _README in other languages: ./readme_translations
+
+.. TRANSLATORS: change the URL on previous line as "." (without quotations).
+
 **Channel ID**: ``blueset.wechat``
 
-EWS 是兼容 EH Forwarder Bot 的微信从端，基于逆向工程的微信网页版、
-修改版 ``wxpy``\ ，\ ``itchat``\ 。
+EWS 是兼容 EH Forwarder Bot 的微信从端，基于逆向工程的微信网页版、\
+修改版 ``wxpy`` 和 ``ItChat``\ 。
 
 本项目的部分代码修改自
-`youfou/wxpy <https://github.com/youfou/wxpy>`__\ 。
+`youfou/wxpy`_\ 、\ `littlecodersh/ItChat`_\ 。
+
+.. _youfou/wxpy: https://github.com/youfou/wxpy
+.. _littlecodersh/ItChat:  https://github.com/littlecodersh/ItChat/
 
 Alpha 版本
 ----------
 
 本项目目前仍是 Alpha 版本，仍不稳定，且功能可能随时变更。
 
-开发进度减缓
-------------
-
-由于技术原因（见注释），EWS 开发进度将会减缓。恢复时间未定。
-
-..  那个垃圾网页版 WC 把俺的账号给封了。
-    只能坐等给恢复了。顺便求恢复方法或者完全封号的方法。
-    （是的俺就想作个大死）
 
 使用前须知
 ----------
 
-自 2016 年中旬以来，陆续有用户报告其微信网页版登录被腾讯封禁。
-表现为用任何方式登录微信网页版提示「当前登录环境异常。为了你的账号安全，
-暂时不能登录 Web 微信。你可以通过手机客户端或 Windows 微信登录」
-或类似的提示。大部分用户会在封禁后三个月内解封，不同用户的解封耗时不同。
+自 2016 年中旬以来，陆续有用户报告其微信网页版登录被腾讯封禁。\
+表现为用任何方式登录微信网页版提示「当前登录环境异常。为了你的账号安全，\
+暂时不能登录 Web 微信。你可以通过手机客户端或 Windows 微信登录」\
+或类似的提示。大部分用户会在封禁后三个月内解封，不同用户的解封耗时不同。\
 该封禁不影响其他客户端的登录。目前封禁的原因尚不明确。
 
-如果你对网页版登录有要求的话，请慎用此 Channel。详细的相关信息请参见
-项目 Wiki。
+如果你对网页版登录有要求的话，请慎用此信道。详细的相关信息请参见项目 Wiki。
 
 软件依赖
 --------
@@ -71,6 +71,20 @@ Alpha 版本
    **(EFB 2.0.0a1 中，默认的配置文件夹位于**
    ``~/.ehforwarderbot/profiles/default`` **)**
 
+
+其他的安装方式
+~~~~~~~~~~~~~~
+
+EWS 同时存在由社区提供的其他安装方式，包括：
+
+- 由 KeLiu_ 维护的 `AUR 软件包`_\ （``python-efb-wechat-slave-git``）。
+- 其他\ `安装脚本或 Docker 等容器`_\ 。
+
+.. _KeLiu: https://github.com/specter119
+.. _AUR 软件包: https://aur.archlinux.org/packages/python-efb-wechat-slave-git
+.. _安装脚本或 Docker 等容器: https://github.com/blueset/ehForwarderBot/wiki/Channels-Repository#scripts-and-containers-eg-docker
+
+
 可选的配置文件
 --------------
 
@@ -96,8 +110,7 @@ EWS 支持使用可选的配置文件来启用实验功能。配置文件存储�
 -  **如何切换已登录的微信账号？**
    请登出当前的账号，并使用其他的微信手机登录。
 -  **如何登录两个微信账号？**
-   该功能没有正式支持，并需要使用者具有一定的技术能力。操作方法请参见项目
-   Wiki。
+   请在 EFB 配置文件中指定不同的实例 ID。
 -  **EWS 稳定吗？**
    EWS 依赖于上游项目
    `ItChat <https://github.com/littlecodersh/ItChat>`__
@@ -111,7 +124,7 @@ EWS 支持使用可选的配置文件来启用实验功能。配置文件存储�
 已知问题
 --------
 
-- 就于微信网页版的工作原理，目前对于没有名称的会话、以及重名的会话支持较差，
+- 就于微信网页版的工作原理，目前对于没有名称的会话、以及重名的会话支持较差，\
   可能会有消息传递错误等问题。
 - 同理，部分情况下变更名称的会话会被视为全新的会话，而「旧会话」随即消失。
 - 仅支持微信网页版所支持的功能以及消息类型，即
@@ -122,7 +135,6 @@ EWS 支持使用可选的配置文件来启用实验功能。配置文件存储�
     - ……等等诸如此类
 - 部分文件、图片、表情等多媒体文件会被网页版微信截断，即收不到任何数据，
   尤以表情为甚。因此造成的偶发现象，会提醒用户使用移动客户端查看。
-
 
 实验功能
 --------
@@ -149,7 +161,7 @@ EWS 支持使用可选的配置文件来启用实验功能。配置文件存储�
 
    -  ``"console_qr_code"``:
       将二维码和提示输出到系统标准输出（\ ``stdout``\ ）。
-   -  ``"master_qr_code"``: 将二维码和提示发送到主端。 **注意**
+   -  ``"master_qr_code"``: 将二维码和提示发送到主端。 **注意**\
       登录时二维码会频繁刷新，请注意二维码可能会导致刷屏。
 
 -  ``on_log_out`` *(str)* [默认值: ``"command"``]
@@ -176,8 +188,27 @@ EWS 支持使用可选的配置文件来启用实验功能。配置文件存储�
    在收到第三方合作应用分享给微信的链接时，其附带的预览图以何种形式发送。
 
    -  ``"ignore"``\ ：忽略附带的缩略图
-   -  ``"upload"``\ ：将缩略图上传到公开图床（\ https://sm.ms\ ），并在日志中输出图片的删除链接。
+   -  ``"upload"``\ ：将缩略图上传到公开图床（\ https://sm.ms\ ），\
+      并在日志中输出图片的删除链接。
    -  ``"image"``\ ：将消息以图片形式发送（不推荐）
+
+-  ``puid_logs`` *(str)* [默认值：``null``]
+
+   输出 PUID 相关日志到指定日志路径。请使用绝对路径。PUID 日志可能会根据\
+   会话数量和消息吞吐量而占用大量存储空间。
+
+- ``send_stickers_and_gif_as_jpeg`` *(bool)* [默认值: ``false``]
+
+  以 JPEG 图片方式发送自定义表情和 GIF，用于临时绕过微信网页版的自定义表情限制。\
+  详见 `#48`_\ 。
+
+.. _#48: https://github.com/blueset/efb-wechat-slave/issues/48
+
+- ``system_chats_to_include`` *(list of str)* [默认值: ``[filehelper]``]
+
+  在默认会话列表中显示的特殊系统会话。其内容仅能为 ``filehelper``\
+  （文件传输助手）、\ ``fmessage``\ （朋友推荐消息）、\ ``newsapp``\
+  （腾讯新闻）、\ ``weixin``\ （微信团队）其中零到四个选项。
 
 ``vendor_specific``
 -------------------
@@ -186,15 +217,35 @@ EWS 的 ``EFBChat`` 提供了以下的 ``vendor_specific`` 项目：
 
 -  ``is_mp`` *(bool)*
    该会话是否为公众号。
--  ``wxpy_objet`` *(wxpy.Chat)*
-   该会话所对应的 ``wxpy.Chat`` 对象。
+- ``is_contact`` *(bool)*
+  不明。提取自 API。
+- ``is_blacklist_contact`` *(bool)*
+  该用户是否被加入黑名单。
+- ``is_conversation_contact`` *(bool)*
+  不明。提取自 API。
+- ``is_room_contact_del`` *(bool)*
+  不明。提取自 API。
+- ``is_room_owner`` *(bool)*
+  该用户是否为群组创建者。
+- ``is_brand_contact`` *(bool)*
+  不明。提取自 API。
+- ``is_sp_contact`` *(bool)*
+  不明。提取自 API。
+- ``is_shield_user`` *(bool)*
+  不明。提取自 API。
+- ``is_muted`` *(bool)*
+  该会话是否在微信中开启免打扰。
+- ``is_top`` *(bool)*
+  该会话是否在微信中被置顶。
+- ``has_photo_album`` *(bool)*
+  不明。提取自 API。
 
 本地化翻译实验
-------------
+--------------
 
 EWS 启用了实验性的本地化翻译。您可以将语言环境变量 (``LANGUAGE``,
-``LC_ALL``, ``LC_MESSAGES`` 或 ``LANG``) 设为一种 `已支持的语言`_ 。
-同时，您也可以在我们的 `Crowdin 项目`_ 里面将 EWS 翻译为您的语言。
+``LC_ALL``, ``LC_MESSAGES`` 或 ``LANG``) 设为一种\ `已支持的语言`_\ 。
+同时，您也可以在我们的 `Crowdin 项目`_\ 里面将 EWS 翻译为您的语言。
 
 .. _已支持的语言: https://crowdin.com/project/ehforwarderbot/
 .. _Crowdin 项目: https://crowdin.com/project/ehforwarderbot/
